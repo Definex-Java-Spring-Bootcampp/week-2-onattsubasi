@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.ResponseEntity;
 
 import com.patika.kredinbizdeservice.model.Application;
@@ -11,6 +13,8 @@ import com.patika.kredinbizdeservice.model.User;
 import com.patika.kredinbizdeservice.service.ApplicationService;
 import java.util.List;
 
+@RestController
+@RequestMapping("api/applications")
 public class ApplicationController {
     
     @Autowired
@@ -36,7 +40,7 @@ public class ApplicationController {
         return applicationService.getByUser(user);
     
     }
-    
+    /*
     @PutMapping("/{email}")
     public ResponseEntity<Application> update(@PathVariable String email, @RequestBody Application application) {
         
@@ -48,6 +52,6 @@ public class ApplicationController {
         }
         
         return ResponseEntity.notFound().build();
-    }
+    }*/
 
 }
