@@ -9,6 +9,7 @@ import com.patika.kredinbizdeservice.repository.CampaignRepository;
 
 @Service
 public class CampaignService {
+    
     private CampaignRepository campaignRepository = new CampaignRepository();
 
     public Campaign save(Campaign campaign) {
@@ -19,8 +20,26 @@ public class CampaignService {
     }
 
     public List<Campaign> getAll() {
+    
         return campaignRepository.getAll();
+    
     }
 
+    public void delete(Campaign campaign) {
     
+        campaignRepository.delete(campaign);
+    
+    }
+
+    public List<Campaign> listByDateDescending() {
+    
+        return campaignRepository.listByDateDescending();
+    
+    }
+
+    public List<Campaign> listByDateAscending() {
+     
+        return campaignRepository.listByDateAscending();
+    
+    }
 }

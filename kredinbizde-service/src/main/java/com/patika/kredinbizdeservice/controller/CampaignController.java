@@ -20,18 +20,31 @@ public class CampaignController {
 
     @Autowired
     public CampaignController(CampaignService campaignService) {
+    
         this.campaignService = campaignService;
+   
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Campaign create(Campaign campaign) {
+    
         return campaignService.save(campaign);
+    
     }
 
     @GetMapping
     public List<Campaign> getAll() {
+   
         return campaignService.getAll();
+    
+    }
+    // kampanyalar tarihi azalan şekilde listelenir
+    @GetMapping("/listByDateDescending")
+    public List<Campaign> listByDateDescending() {
+    
+        return campaignService.listByDateDescending();
+    
     }
 
 }

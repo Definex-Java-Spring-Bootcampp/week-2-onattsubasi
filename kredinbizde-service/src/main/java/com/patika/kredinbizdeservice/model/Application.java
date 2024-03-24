@@ -22,7 +22,7 @@ public class Application {
         this.applicationStatus = ApplicationStatus.INITIAL;
     }
 
-     public Application(String name, Loan loan, User user, LocalDateTime localDateTime) {
+    public Application(String name, Loan loan, User user, LocalDateTime localDateTime) {
         this.name = name;
         this.loan = loan;
         this.user = user;
