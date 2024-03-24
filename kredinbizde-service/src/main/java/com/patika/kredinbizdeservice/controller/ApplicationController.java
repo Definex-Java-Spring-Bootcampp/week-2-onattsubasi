@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.ResponseEntity;
 
@@ -40,18 +41,18 @@ public class ApplicationController {
         return applicationService.getByUser(user);
     
     }
-    /*
-    @PutMapping("/{email}")
-    public ResponseEntity<Application> update(@PathVariable String email, @RequestBody Application application) {
+    
+    @GetMapping
+    public ResponseEntity<Application> getByEmail(@RequestParam String email) {
         
-        Application application1 = applicationService.update(email, application);
+        List<Application> applicationList = applicationService.getByEmail(email);
         
-        if (application1 != null){
-            return ResponseEntity.ok().body(application1);
+        if (applicationList != null){
+            return ResponseEntity.ok().body(applicationList.get(0));
         
         }
         
         return ResponseEntity.notFound().build();
-    }*/
+    }
 
 }
