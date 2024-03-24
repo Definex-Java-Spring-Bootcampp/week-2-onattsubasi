@@ -43,8 +43,16 @@ public class ApplicationRepository {
     
             }
 
-    public Optional<Application> findByUser(String email) {
+    public Optional<Application> findByUser(User user) {
     
+        return applicationList.stream()
+                .filter(application -> application.getUser().equals(user))
+                .findFirst();
+    
+            }
+
+    public Optional<Application> findByEmail(String email) {
+
         return applicationList.stream()
                 .filter(application -> application.getUser().getEmail().equals(email))
                 .findFirst();

@@ -37,10 +37,12 @@ public class ApplicationService {
         return applicationRepository.getByEmail(email);
 
     }
-
+/*  Basvuruyu guncellemek icin mail ya da kullanici bilgisi ile arama yapma dusunuldu
+    ama hangi basvuruyu degistirmek istendigi bu iki degisken disinda da baska
+    degisken de gerektirdigini dusundum. iptal ettim
     public Application update(String email, Application application) {
     
-        Optional<Application> foundApplication = applicationRepository.findByUser(email);
+        Optional<Application> foundApplication = applicationRepository.findByEmail(email);
         
         foundApplication.get().setLoan(application.getLoan());
         
@@ -53,5 +55,19 @@ public class ApplicationService {
         return foundApplication.get();
     }
 
+    public Application update(User user, Application application) {
+    
+        Optional<Application> foundApplication = applicationRepository.findByUser(user);
+        
+        foundApplication.get().setLoan(application.getLoan());
+        
+        foundApplication.get().setUser(application.getUser());
+        
+        applicationRepository.delete(application);
+
+        applicationRepository.save(application);
+
+        return foundApplication.get();
+    }*/
 
 }
