@@ -59,6 +59,22 @@ public class ApplicationRepository {
     
             }
 
+    public List<Application> listByDateDescending(){
+        
+            return applicationList.stream()
+                    .sorted((a1, a2) -> a2.getLocalDateTime().compareTo(a1.getLocalDateTime()))
+                    .collect(Collectors.toList());
+
+    }
+
+    public List<Application> listByDateAscending(){
+        
+            return applicationList.stream()
+                    .sorted((a1, a2) -> a1.getLocalDateTime().compareTo(a2.getLocalDateTime()))
+                    .collect(Collectors.toList());
+
+    }
+
     public void delete(Application application) {
     
         applicationList.remove(application);

@@ -15,10 +15,11 @@ public abstract class Loan implements Product {
     public Loan() {
     }
 
-    public Loan(BigDecimal amount, Integer installment, Double interestRate) {
+    public Loan(BigDecimal amount, Integer installment, Double interestRate, Bank bank) {
         this.amount = amount;
         this.installment = installment;
         this.interestRate = interestRate;
+        this.bank = bank;
     }
 
     abstract void calculate(BigDecimal amount, int installment);
@@ -55,13 +56,13 @@ public abstract class Loan implements Product {
         this.interestRate = interestRate;
     }
 
-    @Override
-    public String toString() {
-        return "Loan{" +
-                "amount=" + amount +
-                ", installment=" + installment +
-                ", bank=" + bank +
-                ", interestRate=" + interestRate +
-                '}';
-    }
+    // @Override
+    // public String toString() {
+    //     return "Loan{" +
+    //             "amount=" + amount +
+    //             ", installment=" + installment +
+    //             ", bank=" + bank +
+    //             ", interestRate=" + interestRate +
+    //             '}';
+    // }
 }

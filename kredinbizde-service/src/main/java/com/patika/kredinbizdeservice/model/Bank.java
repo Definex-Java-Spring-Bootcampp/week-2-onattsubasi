@@ -6,8 +6,13 @@ public class Bank {
 
     private String name;
     private List<Loan> loanList;
-    private List<CreditCard> creditCards;
+    private List<CreditCard> creditCardList;
+    private List<Campaign> campaignList;
 
+    public Bank(String name) {
+        this.name = name;
+    }
+    
     public String getName() {
         return name;
     }
@@ -24,11 +29,39 @@ public class Bank {
         this.loanList = loanList;
     }
 
-    @Override
+    public List<CreditCard> getCreditCardList() {
+        return creditCardList;
+    }
+
+    public void setCreditCardList(List<CreditCard> creditCardList) {
+        this.creditCardList = creditCardList;
+    }
+
+    public void addCreditCard(CreditCard creditCard){
+        creditCardList.add(creditCard);
+    }
+    
+    public void addLoan(Loan loan){
+        loanList.add(loan);
+    }
+    
+    public List<Campaign> getcampaignList() {
+        return campaignList;
+    }
+
+    public void setcampaignList(List<Campaign> campaignList) {
+        this.campaignList = campaignList;
+    }
+
+    public void addCampaign(Campaign campaign){
+        campaignList.add(campaign);
+    }
+
+  /*   @Override
     public String toString() {
         return "Bank{" +
                 "name='" + name + '\'' +
                 ", loanList=" + loanList +
                 '}';
-    }
+    }*/
 }

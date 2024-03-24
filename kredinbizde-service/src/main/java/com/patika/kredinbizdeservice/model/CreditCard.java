@@ -9,9 +9,9 @@ public class CreditCard implements Product{
     private List<Campaign> campaignList;
     private Bank bank;
 
-    public CreditCard(BigDecimal fee, List<Campaign> campaignList) {
+    public CreditCard(BigDecimal fee, Bank bank) {
         this.fee = fee;
-        this.campaignList = campaignList;
+        this.bank = bank;
     }
 
     public BigDecimal getFee() {
@@ -38,12 +38,16 @@ public class CreditCard implements Product{
         this.bank = bank;
     }
 
-    @Override
-    public String toString() {
-        return "CreditCard{" +
-                "fee=" + fee +
-                ", campaignList=" + campaignList +
-                ", bank=" + bank +
-                '}';
+    public void addCampaign(Campaign campaign){
+        campaignList.add(campaign);
     }
+
+    // @Override
+    // public String toString() {
+    //     return "CreditCard{" +
+    //             "fee=" + fee +
+    //             ", campaignList=" + campaignList +
+    //             ", bank=" + bank +
+    //             '}';
+    // }
 }

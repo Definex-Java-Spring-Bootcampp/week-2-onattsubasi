@@ -3,7 +3,6 @@ package com.patika.kredinbizdeservice.service;
 import org.springframework.stereotype.Service;
 import com.patika.kredinbizdeservice.model.User;
 import java.util.List;
-import java.util.Optional;
 
 import com.patika.kredinbizdeservice.model.Application;
 import com.patika.kredinbizdeservice.repository.ApplicationRepository;
@@ -35,6 +34,18 @@ public class ApplicationService {
     public List<Application> getByEmail(String email) {
     
         return applicationRepository.getByEmail(email);
+
+    }
+
+    public List<Application> listByDateAscending() {
+    
+        return applicationRepository.listByDateAscending();
+
+    }
+
+    public List<Application> listByDateDescending() {
+    
+        return applicationRepository.listByDateDescending();
 
     }
 /*  Basvuruyu guncellemek icin mail ya da kullanici bilgisi ile arama yapma dusunuldu
